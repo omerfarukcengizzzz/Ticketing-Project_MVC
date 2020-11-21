@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: header"></head>
+
+<body>
+
+<div class="dashboard-main-wrapper">
+
+    <div th:replace="/fragments/header :: header"></div>
+
+    <div th:replace="/fragments/left-sidebar :: left-sidebar"></div>
+
+    <div class="dashboard-wrapper">
+
+        <div class="dashboard-ecommerce">
+
+            <div class="container-fluid dashboard-content">
+
+                <div class="ecommerce-widget">
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-12">
+
+                            <section class="panel panel-transparent">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Project Create</h2>
+                                </header>
+
+                                <div class="panel-body">
+
+                                    <!-- ------------------------FORM START----------------------------- -->
+                                    <form>
+
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="firstname">First Name</label>
+                                                    <input type="text" class="form-control" id="firstname" placeholder=""
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="lastname">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastname" placeholder=""
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="emailAddress">Email Address</label>
+                                                    <input type="text" class="form-control" id="emailAddress"
+                                                           placeholder="name@example.com"
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="mobileNumber">Mobile Number</label>
+                                                    <input type="text" class="form-control" id="mobileNumber" placeholder=""
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" class="form-control" id="password" placeholder=""
+                                                           required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="passwordConfirmation">Password Confirmation</label>
+                                                    <input type="password" class="form-control" id="passwordConfirmation"
+                                                           placeholder="" required>
+                                                    <div class="invalid-feedback">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label>Gender</label>
+                                                    <br>
+                                                    <label class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" name="gender" checked="" class="custom-control-input"><span
+                                                            class="custom-control-label">Male</span>
+                                                    </label>
+                                                    <label class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" name="gender" class="custom-control-input"><span
+                                                            class="custom-control-label">Female</span>
+                                                    </label>
+                                                </div>
+
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label>Role</label>
+                                                    <select class="form-control">
+                                                        <option selected disabled>Select</option>
+                                                        <option>Admin</option>
+                                                        <option>Manager</option>
+                                                        <option>Employee</option>
+                                                    </select>
+                                                    <br>
+                                                    <div class="float-right">
+                                                        <button href="#" class="btn btn-primary" type="submit">Save</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                    <!-- ------------------------FORM END----------------------------- -->
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ------------------------TABLE START----------------------------- -->
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="col-md-12">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">User List</h2>
+                                </header>
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">E-Mail(username)</th>
+                                                <th scope="col">Gender</th>
+                                                <th scope="col">Phone</th>
+                                                <th scope="col">Role</th>
+                                                <th scope="col">Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th scope="row">John Kesy</th>
+                                                <td>admin@cybertek.com</td>
+                                                <td>Male</td>
+                                                <td>529872435</td>
+                                                <td>Admin</td>
+                                                <td>
+                                                    <div align="left">
+                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
+                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Delisa Norre</th>
+                                                <td>T001@cybertek.com</td>
+                                                <td>Female</td>
+                                                <td>294387523</td>
+                                                <td>Manager</td>
+                                                <td>
+                                                    <div align="left">
+                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
+                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Craig Jark</th>
+                                                <td>P001</td>
+                                                <td>Male</td>
+                                                <td>23187648688</td>
+                                                <td>Employee</td>
+                                                <td>
+                                                    <div align="left">
+                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
+                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Shaun Hayns</th>
+                                                <td>S001</td>
+                                                <td>Male</td>
+                                                <td>2364245325</td>
+                                                <td>Employee</td>
+                                                <td>
+                                                    <div align="left">
+                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
+                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ------------------------TABLE END----------------------------- -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="/fragments/footer :: footer"></div>
+
+</div>
+
+<div th:replace="/fragments/javascript :: js"></div>
+
+</body>
+
+</html>
