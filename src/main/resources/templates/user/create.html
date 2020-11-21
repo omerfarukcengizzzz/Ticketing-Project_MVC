@@ -32,7 +32,7 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form>
+                                    <form class="needs-validation" novalidate>
 
                                         <div class="form-group">
                                             <div class="row">
@@ -41,6 +41,7 @@
                                                     <input type="text" class="form-control" id="firstname" placeholder=""
                                                            required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
@@ -48,6 +49,7 @@
                                                     <input type="text" class="form-control" id="lastname" placeholder=""
                                                            required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                             </div>
@@ -60,13 +62,16 @@
                                                            placeholder="name@example.com"
                                                            required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="mobileNumber">Mobile Number</label>
-                                                    <input type="text" class="form-control" id="mobileNumber" placeholder=""
+                                                    <input type="tel" class="form-control" id="mobileNumber" placeholder=""
+                                                           pattern="^\d{10}$"
                                                            required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                             </div>
@@ -77,6 +82,7 @@
                                                     <input type="password" class="form-control" id="password" placeholder=""
                                                            required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
@@ -84,6 +90,7 @@
                                                     <input type="password" class="form-control" id="passwordConfirmation"
                                                            placeholder="" required>
                                                     <div class="invalid-feedback">
+                                                        Enter a valid input!
                                                     </div>
                                                 </div>
                                             </div>
@@ -162,45 +169,6 @@
                                                 <td>Male</td>
                                                 <td>529872435</td>
                                                 <td>Admin</td>
-                                                <td>
-                                                    <div align="left">
-                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
-                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Delisa Norre</th>
-                                                <td>T001@cybertek.com</td>
-                                                <td>Female</td>
-                                                <td>294387523</td>
-                                                <td>Manager</td>
-                                                <td>
-                                                    <div align="left">
-                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
-                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Craig Jark</th>
-                                                <td>P001</td>
-                                                <td>Male</td>
-                                                <td>23187648688</td>
-                                                <td>Employee</td>
-                                                <td>
-                                                    <div align="left">
-                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
-                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">Shaun Hayns</th>
-                                                <td>S001</td>
-                                                <td>Male</td>
-                                                <td>2364245325</td>
-                                                <td>Employee</td>
                                                 <td>
                                                     <div align="left">
                                                         <button href="#" class="btn btn-warning" type="submit">Update</button>
