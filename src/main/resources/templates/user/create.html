@@ -32,13 +32,14 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form class="needs-validation" novalidate>
+                                    <form class="needs-validation" novalidate th:action="@{/user/create}" method="post" th:object="${user}">
 
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="firstname">First Name</label>
                                                     <input type="text" class="form-control" id="firstname" placeholder=""
+                                                           th:field="*{firstName}"
                                                            required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -47,6 +48,7 @@
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="lastname">Last Name</label>
                                                     <input type="text" class="form-control" id="lastname" placeholder=""
+                                                           th:field="*{lastName}"
                                                            required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -60,6 +62,7 @@
                                                     <label for="emailAddress">Email Address</label>
                                                     <input type="text" class="form-control" id="emailAddress"
                                                            placeholder="name@example.com"
+                                                           th:field="*{userName}"
                                                            required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -69,6 +72,7 @@
                                                     <label for="mobileNumber">Mobile Number</label>
                                                     <input type="tel" class="form-control" id="mobileNumber" placeholder=""
                                                            pattern="^\d{10}$"
+                                                           th:field="*{phone}"
                                                            required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -80,6 +84,7 @@
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="password">Password</label>
                                                     <input type="password" class="form-control" id="password" placeholder=""
+                                                           th:field="*{password}"
                                                            required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -88,6 +93,7 @@
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="passwordConfirmation">Password Confirmation</label>
                                                     <input type="password" class="form-control" id="passwordConfirmation"
+                                                           th:field="*{password}"
                                                            placeholder="" required>
                                                     <div class="invalid-feedback">
                                                         Enter a valid input!
@@ -100,22 +106,20 @@
                                                     <label>Gender</label>
                                                     <br>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="gender" checked="" class="custom-control-input"><span
+                                                        <input type="radio" name="gender" checked="" class="custom-control-input" th:field="*{gender}" th:value="Male"><span
                                                             class="custom-control-label">Male</span>
                                                     </label>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="gender" class="custom-control-input"><span
+                                                        <input type="radio" name="gender" class="custom-control-input" th:field="*{gender}" th:value="Female"><span
                                                             class="custom-control-label">Female</span>
                                                     </label>
                                                 </div>
 
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label>Role</label>
-                                                    <select class="form-control">
-                                                        <option selected disabled>Select</option>
-                                                        <option>Admin</option>
-                                                        <option>Manager</option>
-                                                        <option>Employee</option>
+                                                    <select class="form-control" th:field="*{role}">
+                                                        <option th:value="" th:text="Select" selected disabled></option>
+                                                        <option th:each="role : ${}" th:text="${}"></option>
                                                     </select>
                                                     <br>
                                                     <div class="float-right">
