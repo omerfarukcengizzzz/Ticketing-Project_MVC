@@ -125,7 +125,7 @@
                                                     </div>
                                                     <br>
                                                     <div class="float-right">
-                                                        <button href="#" class="btn btn-primary" type="submit">Save</button>
+                                                        <button href="#" class="btn btn-success btn-sm" type="submit">Save</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -173,13 +173,13 @@
                                                 <tr th:each="user : ${users}">
                                                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                                     <td th:text="${user.userName}"></td>
-                                                    <td th:text="${user.gender}"></td>
+                                                    <td th:text="${user.gender.value}"></td>
                                                     <td th:text="${user.phone}"></td>
                                                     <td th:text="${user.role.description}"></td>
                                                     <td>
                                                         <div align="left">
-                                                            <button href="#" class="btn btn-warning" type="submit">Update</button>
-                                                            <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                            <button href="#" class="btn btn-warning btn-sm" type="submit">Update</button>
+                                                            <button href="#" class="btn btn-danger btn-sm" type="submit">Delete</button>
                                                         </div>
                                                     </td>
                                                 </tr>
