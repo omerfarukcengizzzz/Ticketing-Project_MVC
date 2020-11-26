@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
 public class User extends BaseEntity{
     private String firstName;
     private String lastName;

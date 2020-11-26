@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-@Builder
 public class BaseEntity {
     private Long id;
     private LocalDateTime insertDateTime;

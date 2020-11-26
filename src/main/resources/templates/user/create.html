@@ -116,11 +116,13 @@
                                                 </div>
 
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label>Role</label>
-                                                    <select class="form-control" th:field="*{role}">
-                                                        <option th:value="" th:text="Select" selected disabled></option>
-                                                        <option th:each="role : ${}" th:text="${}"></option>
-                                                    </select>
+                                                    <div class="form-group">
+                                                        <label>Role</label>
+                                                        <select class="custom-select" th:field="*{role}" required="required">
+                                                            <option th:value="Select" th:text="Select"></option>
+                                                            <option th:each="role : ${roles}" th:value="${role.id}" th:text="${role.description}"></option>
+                                                        </select>
+                                                    </div>
                                                     <br>
                                                     <div class="float-right">
                                                         <button href="#" class="btn btn-primary" type="submit">Save</button>
@@ -157,30 +159,32 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped">
                                             <thead>
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">E-Mail(username)</th>
-                                                <th scope="col">Gender</th>
-                                                <th scope="col">Phone</th>
-                                                <th scope="col">Role</th>
-                                                <th scope="col">Action</th>
-                                            </tr>
+                                                <tr>
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">E-Mail(username)</th>
+                                                    <th scope="col">Gender</th>
+                                                    <th scope="col">Phone</th>
+                                                    <th scope="col">Role</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
                                             </thead>
+
                                             <tbody>
-                                            <tr>
-                                                <th scope="row">John Kesy</th>
-                                                <td>admin@cybertek.com</td>
-                                                <td>Male</td>
-                                                <td>529872435</td>
-                                                <td>Admin</td>
-                                                <td>
-                                                    <div align="left">
-                                                        <button href="#" class="btn btn-warning" type="submit">Update</button>
-                                                        <button href="#" class="btn btn-danger" type="submit">Delete</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr th:each="user : ${users}">
+                                                    <td th:text="${user.firstName + ' ' + user.lastName}"></td>
+                                                    <td th:text="${user.userName}"></td>
+                                                    <td th:text="${user.gender}"></td>
+                                                    <td th:text="${user.phone}"></td>
+                                                    <td th:text="${user.role.description}"></td>
+                                                    <td>
+                                                        <div align="left">
+                                                            <button href="#" class="btn btn-warning" type="submit">Update</button>
+                                                            <button href="#" class="btn btn-danger" type="submit">Delete</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </tbody>
+
                                         </table>
                                     </div>
                                 </div>
