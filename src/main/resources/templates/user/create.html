@@ -106,11 +106,11 @@
                                                     <label>Gender</label>
                                                     <br>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="gender" checked="" class="custom-control-input" th:field="*{gender}" th:value="Male"><span
+                                                        <input type="radio" name="gender" checked="" class="custom-control-input" th:field="*{gender}" th:value="MALE"><span
                                                             class="custom-control-label">Male</span>
                                                     </label>
                                                     <label class="custom-control custom-radio custom-control-inline">
-                                                        <input type="radio" name="gender" class="custom-control-input" th:field="*{gender}" th:value="Female"><span
+                                                        <input type="radio" name="gender" class="custom-control-input" th:field="*{gender}" th:value="FEMALE"><span
                                                             class="custom-control-label">Female</span>
                                                     </label>
                                                 </div>
@@ -173,7 +173,7 @@
                                                 <tr th:each="user : ${users}">
                                                     <td th:text="${user.firstName + ' ' + user.lastName}"></td>
                                                     <td th:text="${user.userName}"></td>
-                                                    <td th:text="${user.gender.value}"></td>
+                                                    <td th:text="${user.gender}"></td>
                                                     <td th:text="${user.phone}"></td>
                                                     <td th:text="${user.role.description}"></td>
                                                     <td>
