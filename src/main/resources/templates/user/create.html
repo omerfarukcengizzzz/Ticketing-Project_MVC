@@ -93,6 +93,7 @@
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="passwordConfirmation">Password Confirmation</label>
                                                     <input type="password" class="form-control" id="passwordConfirmation"
+                                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}"
                                                            th:field="*{password}"
                                                            placeholder="" required>
                                                     <div class="invalid-feedback">
