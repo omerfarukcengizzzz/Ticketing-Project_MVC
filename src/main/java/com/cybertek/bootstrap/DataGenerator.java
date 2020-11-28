@@ -2,9 +2,11 @@ package com.cybertek.bootstrap;
 
 import com.cybertek.dto.ProjectDTO;
 import com.cybertek.dto.RoleDTO;
+import com.cybertek.dto.TaskDTO;
 import com.cybertek.dto.UserDTO;
 import com.cybertek.service.ProjectService;
 import com.cybertek.service.RoleService;
+import com.cybertek.service.TaskService;
 import com.cybertek.service.UserService;
 import com.cybertek.utils.Gender;
 import com.cybertek.utils.Status;
@@ -19,11 +21,13 @@ public class DataGenerator implements CommandLineRunner {
     RoleService roleService;
     UserService userService;
     ProjectService projectService;
+    TaskService taskService;
 
-    public DataGenerator(RoleService roleService, UserService userService, ProjectService projectService) {
+    public DataGenerator(RoleService roleService, UserService userService, ProjectService projectService, TaskService taskService) {
         this.roleService = roleService;
         this.userService = userService;
         this.projectService = projectService;
+        this.taskService = taskService;
     }
 
     @Override
@@ -51,7 +55,7 @@ public class DataGenerator implements CommandLineRunner {
         UserDTO user7 = new UserDTO("Maria",
                 "Ada", "maria@cybertek.com", "Abc4", true, "9996987412", employeeRole, Gender.FEMALE);
         UserDTO user8 = new UserDTO("Bill",
-                "Matt", "maria@cybertek.com", "Abc4", true, "8881239846", employeeRole, Gender.MALE);
+                "Matt", "matt@cybertek.com", "Abc4", true, "8881239846", employeeRole, Gender.MALE);
 
         userService.save(user1);
         userService.save(user2);
@@ -70,6 +74,14 @@ public class DataGenerator implements CommandLineRunner {
         projectService.save(project2);
         projectService.save(project3);
 
+        TaskDTO task1 = new TaskDTO(project1,user8,"Controller","Request Mapping",Status.IN_PROGRESS,LocalDate.now().minusDays(4));
+        TaskDTO task2 = new TaskDTO(project3,user3,"Configuration","Database Connnection",Status.COMPLETE,LocalDate.now().minusDays(12));
+        TaskDTO task3 = new TaskDTO(project3,user6,"Mapping","One-To-Many",Status.IN_PROGRESS,LocalDate.now().minusDays(8));
+        TaskDTO task4 = new TaskDTO(project2,user7,"Dependency Injection","Autowired",Status.UAT_TEST,LocalDate.now().minusDays(20));
+        taskService.save(task1);
+        taskService.save(task2);
+        taskService.save(task3);
+        taskService.save(task4);
 
     }
 }
