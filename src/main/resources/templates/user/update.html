@@ -32,7 +32,7 @@
                                 <div class="panel-body">
 
                                     <!-- ------------------------FORM START----------------------------- -->
-                                    <form class="needs-validation" novalidate th:action="@{/user/create}" method="post"
+                                    <form class="needs-validation" novalidate th:action="@{/user/update/}" method="post"
                                           th:object="${user}">
 
                                         <div class="form-group">
@@ -188,18 +188,14 @@
                                                 <td th:text="${user.gender.value}"></td>
                                                 <td th:text="${user.phone}"></td>
                                                 <td th:text="${user.role.description}"></td>
-                                                <td class="actions">
+                                                <td>
                                                     <div align="left">
-                                                        <a th:href="@{/user/update/{id}(id=${user.userName})}">
-                                                            <button class="btn btn-warning btn-sm" type="submit">
-                                                                Update
-                                                            </button>
-                                                        </a>
-                                                        <a>
-                                                            <button href="#" class="btn btn-danger btn-sm" type="submit">
-                                                                Delete
-                                                            </button>
-                                                        </a>
+                                                        <button href="#" class="btn btn-warning btn-sm" type="submit">
+                                                            Update
+                                                        </button>
+                                                        <button href="#" class="btn btn-danger btn-sm" type="submit">
+                                                            Delete
+                                                        </button>
                                                     </div>
                                                 </td>
                                             </tr>
