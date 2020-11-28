@@ -22,12 +22,17 @@ public abstract class AbstractMapService<T, ID> {
         return map.get(id);
     }
 
-    void deleteById(ID id){
+    void deleteById(ID id) {
         map.remove(id);
     }
 
-    void delete(T object){
+    void delete(T object) {
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
+    }
+
+    void update(ID id, T object) {
+        delete(object);
+        save(id, object);
     }
 
 }
