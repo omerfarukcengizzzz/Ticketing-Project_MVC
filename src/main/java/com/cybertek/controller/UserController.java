@@ -26,7 +26,6 @@ public class UserController {
         model.addAttribute("user", new UserDTO());
         model.addAttribute("roles", roleService.findAll());
         model.addAttribute("users", userService.findAll());
-
         return "/user/create";
     }
 
@@ -38,13 +37,10 @@ public class UserController {
 
     @GetMapping("/update/{username}")
     public String editUser(@PathVariable("username") String username, Model model) {
-
         model.addAttribute("user", userService.findByID(username));
         model.addAttribute("users", userService.findAll());
         model.addAttribute("roles", roleService.findAll());
-
         return "/user/update";
-
     }
 
     @PostMapping("/update/{username}")
