@@ -5,6 +5,7 @@ import com.cybertek.service.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImpl extends AbstractMapService<UserDTO, String> implements UserService {
@@ -36,5 +37,19 @@ public class UserServiceImpl extends AbstractMapService<UserDTO, String> impleme
     @Override
     public UserDTO findByID(String id) {
         return super.findByID(id);
+    }
+
+    @Override
+    public List<UserDTO> findManagers() {
+        return super.findAll().stream()
+                .filter(user -> user.getRole().getDescription().equalsIgnoreCase("manager"))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<UserDTO> findEmployees() {
+        return super.findAll().stream()
+                .filter(user -> user.getRole().getDescription().equalsIgnoreCase("employee"))
+                .collect(Collectors.toList());
     }
 }

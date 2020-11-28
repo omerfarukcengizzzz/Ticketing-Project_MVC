@@ -2,6 +2,7 @@ package com.cybertek.implementation;
 
 import com.cybertek.dto.ProjectDTO;
 import com.cybertek.service.ProjectService;
+import com.cybertek.utils.Status;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,6 +21,12 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO, String> i
 
     @Override
     public void update(ProjectDTO object) {
+        ProjectDTO newProject = findByID(object.getProjectCode());
+
+        if (object.getProjectStatus() == null) {
+            object.setProjectStatus(newProject.getProjectStatus());
+        }
+
         super.update(object.getProjectCode(), object);
     }
 
@@ -36,5 +43,11 @@ public class ProjectServiceImpl extends AbstractMapService<ProjectDTO, String> i
     @Override
     public ProjectDTO findByID(String id) {
         return super.findByID(id);
+    }
+
+    @Override
+    public void complete(ProjectDTO project) {
+        project.setProjectStatus(Status.COMPLETE);
+        super.save(project.getProjectCode(), project);
     }
 }
