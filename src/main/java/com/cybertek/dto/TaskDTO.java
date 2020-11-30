@@ -10,6 +10,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 public class TaskDTO {
+
     private Long id;
     private ProjectDTO project;
     private UserDTO assignedEmployee;
