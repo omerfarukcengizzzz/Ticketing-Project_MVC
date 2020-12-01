@@ -17,6 +17,7 @@ import java.time.LocalDate;
 
 @Component
 public class DataGenerator implements CommandLineRunner {
+
     RoleService roleService;
     UserService userService;
     ProjectService projectService;
